@@ -3,12 +3,10 @@ import fs from "fs"
 import path from "path"
 
 const transporter = nodemailer.createTransport({
-  host: process.env.SMTP_HOST || "smtp.gmail.com",
-  port: parseInt(process.env.SMTP_PORT || "587"),
-  secure: process.env.SMTP_SECURE === "true",
+  service: "gmail",
   auth: {
-    user: process.env.SMTP_USER,
-    pass: process.env.SMTP_PASS,
+    user: process.env.GMAIL_EMAIL,
+    pass: process.env.GMAIL_APP_PASSWORD,
   },
 })
 
@@ -41,7 +39,7 @@ export async function sendEmail({
   html: string
   fallbackData?: Record<string, any>
 }) {
-  const smtpConfigured = process.env.SMTP_USER && process.env.SMTP_PASS
+  const smtpConfigured = process.env.GMAIL_EMAIL && process.env.GMAIL_APP_PASSWORD
 
   if (!smtpConfigured) {
     if (fallbackData) {
@@ -52,7 +50,7 @@ export async function sendEmail({
 
   try {
     await transporter.sendMail({
-      from: process.env.SMTP_FROM || process.env.SMTP_USER,
+      from: process.env.GMAIL_EMAIL,
       to,
       subject,
       html,
