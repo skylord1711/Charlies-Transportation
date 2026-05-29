@@ -1,4 +1,6 @@
 import nodemailer from "nodemailer"
+import fs from "fs"
+import path from "path"
 
 const transporter = nodemailer.createTransport({
   host: process.env.SMTP_HOST || "smtp.gmail.com",
@@ -10,15 +12,44 @@ const transporter = nodemailer.createTransport({
   },
 })
 
+const inboxPath = path.join(process.cwd(), "data", "inbox.json")
+
+function readInbox(): any[] {
+  try {
+    if (!fs.existsSync(inboxPath)) return []
+    const raw = fs.readFileSync(inboxPath, "utf-8")
+    return JSON.parse(raw)
+  } catch {
+    return []
+  }
+}
+
+function appendToInbox(entry: any): void {
+  const inbox = readInbox()
+  inbox.push({ ...entry, receivedAt: new Date().toISOString() })
+  fs.writeFileSync(inboxPath, JSON.stringify(inbox, null, 2), "utf-8")
+}
+
 export async function sendEmail({
   to,
   subject,
   html,
+  fallbackData,
 }: {
   to: string
   subject: string
   html: string
+  fallbackData?: Record<string, any>
 }) {
+  const smtpConfigured = process.env.SMTP_USER && process.env.SMTP_PASS
+
+  if (!smtpConfigured) {
+    if (fallbackData) {
+      appendToInbox({ subject, ...fallbackData })
+    }
+    return { success: true, method: "local" }
+  }
+
   try {
     await transporter.sendMail({
       from: process.env.SMTP_FROM || process.env.SMTP_USER,
@@ -26,10 +57,13 @@ export async function sendEmail({
       subject,
       html,
     })
-    return { success: true }
+    return { success: true, method: "email" }
   } catch (error) {
     console.error("Email send error:", error)
-    return { success: false, error }
+    if (fallbackData) {
+      appendToInbox({ subject, ...fallbackData })
+    }
+    return { success: true, method: "local" }
   }
 }
 

@@ -15,13 +15,14 @@ export async function POST(request: Request) {
       to: process.env.CONTACT_EMAIL || "nazihmafargeh@gmail.com",
       subject: "Contact Form Submission - Charlie's Transportation",
       html,
+      fallbackData: { type: "contact", name, email, phone, subject, message },
     })
 
     if (result.success) {
       return NextResponse.json({ success: true })
     }
 
-    return NextResponse.json({ error: "Failed to send email" }, { status: 500 })
+    return NextResponse.json({ error: "Failed to send message" }, { status: 500 })
   } catch {
     return NextResponse.json({ error: "Internal server error" }, { status: 500 })
   }

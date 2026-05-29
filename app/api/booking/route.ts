@@ -21,13 +21,17 @@ export async function POST(request: Request) {
       to: process.env.CONTACT_EMAIL || "nazihmafargeh@gmail.com",
       subject: "Booking Inquiry - Charlie's Transportation",
       html,
+      fallbackData: {
+        type: "booking", name, phone, pickup, dropoff,
+        stepType, assistanceRequired, weight, date, notes,
+      },
     })
 
     if (result.success) {
       return NextResponse.json({ success: true })
     }
 
-    return NextResponse.json({ error: "Failed to send email" }, { status: 500 })
+    return NextResponse.json({ error: "Failed to send inquiry" }, { status: 500 })
   } catch {
     return NextResponse.json({ error: "Internal server error" }, { status: 500 })
   }
