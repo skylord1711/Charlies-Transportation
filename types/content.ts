@@ -21,17 +21,6 @@ export interface SiteContent {
     services: { title: string; description: string; icon?: string }[]
   }
 }
-
-export interface FleetItem {
-  id: string
-  name: string
-  type: string
-  capacity: string
-  description: string
-  features: string[]
-  image: string
-}
-
 export interface ContactInfo {
   phone: string
   email: string

@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server"
 import { getSession } from "@/lib/auth"
-import { getContent, saveContent, getFleet, saveFleet, getContactInfo, saveContactInfo } from "@/lib/content"
+import { getContent, saveContent, getContactInfo, saveContactInfo } from "@/lib/content"
 
 export async function GET(request: Request) {
   const isAuth = await getSession()
@@ -14,8 +14,6 @@ export async function GET(request: Request) {
   switch (type) {
     case "content":
       return NextResponse.json(getContent())
-    case "fleet":
-      return NextResponse.json(getFleet())
     case "contact":
       return NextResponse.json(getContactInfo())
     default:
@@ -36,9 +34,6 @@ export async function POST(request: Request) {
   switch (type) {
     case "content":
       saveContent(body)
-      return NextResponse.json({ success: true })
-    case "fleet":
-      saveFleet(body)
       return NextResponse.json({ success: true })
     case "contact":
       saveContactInfo(body)

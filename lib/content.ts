@@ -1,6 +1,6 @@
 import fs from "fs"
 import path from "path"
-import type { SiteContent, FleetItem, ContactInfo } from "@/types/content"
+import type { SiteContent, ContactInfo } from "@/types/content"
 
 const dataDir = path.join(process.cwd(), "data")
 
@@ -22,15 +22,6 @@ export function getContent(): SiteContent {
 export function saveContent(content: SiteContent): void {
   writeJSON("content.json", content)
 }
-
-export function getFleet(): FleetItem[] {
-  return readJSON<FleetItem[]>("fleet.json")
-}
-
-export function saveFleet(fleet: FleetItem[]): void {
-  writeJSON("fleet.json", fleet)
-}
-
 export function getContactInfo(): ContactInfo {
   return readJSON<ContactInfo>("contact.json")
 }

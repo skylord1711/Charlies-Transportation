@@ -1,13 +1,11 @@
 import HeroSection from "@/components/HeroSection"
 import ServicesPreview from "@/components/ServicesPreview"
-import FleetPreview from "@/components/FleetPreview"
 import WhyChooseUs from "@/components/WhyChooseUs"
 import CTASection from "@/components/CTASection"
-import { getContent, getFleet } from "@/lib/content"
+import { getContent } from "@/lib/content"
 
 export default function HomePage() {
   const content = getContent()
-  const fleet = getFleet()
 
   return (
     <>
@@ -20,7 +18,6 @@ export default function HomePage() {
         description={content.home.servicesDescription}
         services={content.services.services}
       />
-      <FleetPreview fleet={fleet} />
       <WhyChooseUs
         title={content.home.whyChooseUsTitle}
         points={content.home.whyChooseUsPoints}

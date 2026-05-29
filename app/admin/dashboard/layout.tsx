@@ -15,16 +15,6 @@ const sidebarLinks = [
     ),
   },
   {
-    href: "/admin/dashboard/fleet",
-    label: "Fleet",
-    icon: (
-      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 17a2 2 0 11-4 0 2 2 0 014 0zM19 17a2 2 0 11-4 0 2 2 0 014 0z" />
-        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 17h14M5 17l-2-8h16l-2 8M3 9h18" />
-      </svg>
-    ),
-  },
-  {
     href: "/admin/dashboard/contact",
     label: "Contact Info",
     icon: (
