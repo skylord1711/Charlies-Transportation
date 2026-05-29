@@ -1,0 +1,29 @@
+[
+  {
+    "id": "sedan-1",
+    "name": "Luxury Sedan",
+    "type": "Sedan",
+    "capacity": "4 passengers",
+    "description": "Comfortable and elegant sedan perfect for individual trips, medical appointments, and airport transfers.",
+    "features": ["Leather seating", "Climate control", "GPS navigation", "Handicap accessible options"],
+    "image": ""
+  },
+  {
+    "id": "suv-1",
+    "name": "Premium SUV",
+    "type": "SUV",
+    "capacity": "6 passengers",
+    "description": "Spacious SUV offering extra legroom and cargo space for group outings and family transportation.",
+    "features": ["Premium interior", "Extra legroom", "Cargo space", "All-weather capability"],
+    "image": ""
+  },
+  {
+    "id": "van-1",
+    "name": "Accessible Van",
+    "type": "Van",
+    "capacity": "6 passengers + wheelchair",
+    "description": "Fully accessible van equipped with wheelchair ramp and securements for safe and comfortable travel.",
+    "features": ["Wheelchair ramp", "Securement system", "Spacious interior", "Climate controlled"],
+    "image": ""
+  }
+]

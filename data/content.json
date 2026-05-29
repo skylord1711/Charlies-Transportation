@@ -1,0 +1,77 @@
+{
+  "home": {
+    "heroTitle": "Safe & Reliable Transportation Services",
+    "heroSubtitle": "Your trusted private-pay transportation provider serving Rahway, NJ and surrounding areas with professionalism and care.",
+    "servicesTitle": "Our Services",
+    "servicesDescription": "We provide premium private-pay transportation services tailored to your needs. Whether it's a medical appointment, social outing, or personal errand, we get you there safely.",
+    "whyChooseUsTitle": "Why Choose Charlie's Transportation?",
+    "whyChooseUsPoints": [
+      {
+        "title": "Professional Drivers",
+        "description": "Our drivers are carefully screened, trained, and committed to providing the highest standard of service."
+      },
+      {
+        "title": "Reliable & Punctual",
+        "description": "We value your time. Our service is built on reliability and promptness, every single ride."
+      },
+      {
+        "title": "Comfort & Safety",
+        "description": "Modern, well-maintained vehicles equipped with safety features to ensure a comfortable journey."
+      },
+      {
+        "title": "Personalized Service",
+        "description": "Every client has unique needs. We tailor our services to provide the best possible experience."
+      }
+    ],
+    "ctaTitle": "Ready to Ride With Us?",
+    "ctaText": "Contact us today to schedule your transportation or to learn more about our services."
+  },
+  "about": {
+    "title": "About Charlie's Transportation",
+    "content": "Charlie's Transportation is a family-owned private-pay transportation service based in Rahway, New Jersey. We are dedicated to providing safe, reliable, and comfortable transportation solutions for individuals and families in our community.\n\nOur mission is simple: to get you where you need to go with dignity, comfort, and professionalism. We understand that transportation is more than just getting from point A to point B — it's about independence, access, and peace of mind.\n\nWith years of experience in the transportation industry, we have built a reputation for excellence, reliability, and compassionate service. Our fleet of modern vehicles is maintained to the highest standards, and our drivers are committed to your safety and comfort.",
+    "mission": "To provide safe, reliable, and dignified transportation services that enhance the quality of life for our clients and their families.",
+    "values": [
+      "Safety First — Every ride, every time",
+      "Reliability — We show up when we say we will",
+      "Compassion — We treat every client like family",
+      "Professionalism — Excellence in everything we do",
+      "Community — Serving our neighbors with pride"
+    ]
+  },
+  "services": {
+    "title": "Our Transportation Services",
+    "description": "We offer comprehensive private-pay transportation services designed to meet your needs. All services are provided by professional drivers in modern, comfortable vehicles.",
+    "services": [
+      {
+        "title": "Medical Appointments",
+        "description": "Reliable transportation to and from doctor visits, hospital appointments, and medical procedures. We ensure you arrive on time and stress-free.",
+        "icon": "medical"
+      },
+      {
+        "title": "Social Outings",
+        "description": "Enjoy dinner with friends, visit family, or attend community events. We provide comfortable transportation for all your social occasions.",
+        "icon": "social"
+      },
+      {
+        "title": "Personal Errands",
+        "description": "Need to go shopping, run errands, or visit the bank? Let us handle the driving while you focus on what matters.",
+        "icon": "errands"
+      },
+      {
+        "title": "Airport Transfers",
+        "description": "Stress-free airport transportation with timely pickups and dropoffs. We monitor flight schedules to accommodate changes.",
+        "icon": "airport"
+      },
+      {
+        "title": "Wheelchair Accessible",
+        "description": "Accessible vehicles equipped to accommodate wheelchairs and mobility devices, ensuring everyone can travel comfortably.",
+        "icon": "accessible"
+      },
+      {
+        "title": "Event Transportation",
+        "description": "Group transportation for weddings, parties, corporate events, and special occasions. Customized to your schedule and needs.",
+        "icon": "event"
+      }
+    ]
+  }
+}
